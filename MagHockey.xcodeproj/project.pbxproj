@@ -12,16 +12,24 @@
 		AE48E0611DDE74CA002E80B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE48E05F1DDE74CA002E80B9 /* Main.storyboard */; };
 		AE48E0631DDE74CA002E80B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE48E0621DDE74CA002E80B9 /* Assets.xcassets */; };
 		AE48E0661DDE74CA002E80B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE48E0641DDE74CA002E80B9 /* LaunchScreen.storyboard */; };
+		AE8820BF1DEA92350054C5AC /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8820BE1DEA92350054C5AC /* TrainViewController.swift */; };
+		AE8820C11DEAA3920054C5AC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8820C01DEAA3920054C5AC /* GameViewController.swift */; };
+		AE8820C31DEAA3F40054C5AC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8820C21DEAA3F40054C5AC /* GameScene.swift */; };
+		AE8820C71DEB4C930054C5AC /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8820C61DEB4C930054C5AC /* SharedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AE48E0581DDE74CA002E80B9 /* MagHockey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MagHockey.app; path = "/Users/xinyi/Developer/2016fall/mobile/final/MagHockey/build/Debug-iphoneos/MagHockey.app"; sourceTree = "<absolute>"; };
 		AE48E05B1DDE74CA002E80B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE48E05D1DDE74CA002E80B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE48E0601DDE74CA002E80B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE48E0621DDE74CA002E80B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE48E0651DDE74CA002E80B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE48E0671DDE74CA002E80B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE8820BB1DEA7EC80054C5AC /* MagHockey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagHockey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE8820BE1DEA92350054C5AC /* TrainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
+		AE8820C01DEAA3920054C5AC /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AE8820C21DEAA3F40054C5AC /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		AE8820C61DEB4C930054C5AC /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				AE48E05A1DDE74CA002E80B9 /* MagHockey */,
+				AE8820BB1DEA7EC80054C5AC /* MagHockey.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,10 +56,14 @@
 			children = (
 				AE48E05B1DDE74CA002E80B9 /* AppDelegate.swift */,
 				AE48E05D1DDE74CA002E80B9 /* ViewController.swift */,
+				AE8820BE1DEA92350054C5AC /* TrainViewController.swift */,
+				AE8820C01DEAA3920054C5AC /* GameViewController.swift */,
+				AE8820C21DEAA3F40054C5AC /* GameScene.swift */,
 				AE48E05F1DDE74CA002E80B9 /* Main.storyboard */,
 				AE48E0621DDE74CA002E80B9 /* Assets.xcassets */,
 				AE48E0641DDE74CA002E80B9 /* LaunchScreen.storyboard */,
 				AE48E0671DDE74CA002E80B9 /* Info.plist */,
+				AE8820C61DEB4C930054C5AC /* SharedData.swift */,
 			);
 			path = MagHockey;
 			sourceTree = "<group>";
@@ -72,7 +85,7 @@
 			);
 			name = MagHockey;
 			productName = MagHockey;
-			productReference = AE48E0581DDE74CA002E80B9 /* MagHockey.app */;
+			productReference = AE8820BB1DEA7EC80054C5AC /* MagHockey.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -87,7 +100,7 @@
 				TargetAttributes = {
 					AE48E0571DDE74CA002E80B9 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = ME4966827L;
+						DevelopmentTeam = 4WQP329G4K;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -128,8 +141,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8820C71DEB4C930054C5AC /* SharedData.swift in Sources */,
+				AE8820C31DEAA3F40054C5AC /* GameScene.swift in Sources */,
+				AE8820C11DEAA3920054C5AC /* GameViewController.swift in Sources */,
 				AE48E05E1DDE74CA002E80B9 /* ViewController.swift in Sources */,
 				AE48E05C1DDE74CA002E80B9 /* AppDelegate.swift in Sources */,
+				AE8820BF1DEA92350054C5AC /* TrainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +269,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ME4966827L;
+				DEVELOPMENT_TEAM = 4WQP329G4K;
 				INFOPLIST_FILE = MagHockey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinyi.MagHockey;
@@ -265,7 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ME4966827L;
+				DEVELOPMENT_TEAM = 4WQP329G4K;
 				INFOPLIST_FILE = MagHockey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinyi.MagHockey;
@@ -293,6 +310,7 @@
 				AE48E06C1DDE74CA002E80B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
