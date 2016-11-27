@@ -114,7 +114,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJP-9n-0Jj">
-                                <frame key="frameInset" minX="126" minY="589" width="81" height="30"/>
+                                <frame key="frameInset" minX="126" minY="567" width="81" height="30"/>
                                 <state key="normal" title="Predict"/>
                                 <connections>
                                     <action selector="getPredict:" destination="z9R-82-IDA" eventType="touchUpInside" id="tY0-Mo-OZ3"/>
@@ -131,7 +131,7 @@
                             <constraint firstItem="VJP-9n-0Jj" firstAttribute="centerX" secondItem="PZF-vv-n7W" secondAttribute="centerX" id="Ywl-cf-qMJ"/>
                             <constraint firstItem="ioA-c1-jIh" firstAttribute="top" secondItem="3Eq-Fh-5kg" secondAttribute="bottom" constant="96" id="Zw8-yG-hGI"/>
                             <constraint firstItem="ioA-c1-jIh" firstAttribute="centerX" secondItem="PZF-vv-n7W" secondAttribute="centerX" id="bg6-21-svc"/>
-                            <constraint firstItem="VJP-9n-0Jj" firstAttribute="top" secondItem="Ovx-XT-KF9" secondAttribute="bottom" constant="30" id="e9A-qm-3Zr"/>
+                            <constraint firstItem="VJP-9n-0Jj" firstAttribute="top" secondItem="Ovx-XT-KF9" secondAttribute="bottom" constant="10" id="e9A-qm-3Zr"/>
                             <constraint firstItem="WTf-k7-D3K" firstAttribute="top" secondItem="8Wj-Ci-yzv" secondAttribute="bottom" constant="37" id="iDX-vC-Pvy"/>
                             <constraint firstItem="8Wj-Ci-yzv" firstAttribute="centerX" secondItem="PZF-vv-n7W" secondAttribute="centerX" id="iDl-cm-hnp"/>
                             <constraint firstItem="WTf-k7-D3K" firstAttribute="centerX" secondItem="PZF-vv-n7W" secondAttribute="centerX" id="qGb-ae-Hj9"/>

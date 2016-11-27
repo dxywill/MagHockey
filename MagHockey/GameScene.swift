@@ -24,7 +24,7 @@ class GameScene: SKScene {
         run(SKAction.repeatForever(
             SKAction.sequence([
                 SKAction.run(updateLocation),
-                SKAction.wait(forDuration: 1.0)
+                SKAction.wait(forDuration: 0.2)
                 ])
         ))
     }
@@ -32,13 +32,13 @@ class GameScene: SKScene {
     func updateLocation() {
         
         let location = model.getCoordinates()
-        coordinateX = location.x
-        coordinateY = location.y
+        coordinateX = location.x * ( Double(size.width / 8.0)) + 30.0
+        coordinateY = location.y * (Double(size.height / 10.0)) + 30.0
         
         // Create the actions
-        let actionMove = SKAction.move(to: CGPoint(x: coordinateX, y: coordinateY), duration: 1)
+        let actionMove = SKAction.move(to: CGPoint(x: coordinateX, y: coordinateY), duration:0.2)
         
-        player.run(SKAction.sequence([actionMove]))
+        player.run(actionMove)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

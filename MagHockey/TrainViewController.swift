@@ -143,6 +143,7 @@ class TrainViewController: UIViewController {
             }
             else {
                 // Failure
+                print(error)
                 print("URL Session Task Failed: %@", error!.localizedDescription);
             }
         }

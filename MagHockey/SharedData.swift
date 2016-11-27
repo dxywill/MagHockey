@@ -18,9 +18,6 @@ class SharedData {
     func updateCoordiante(with x: Double, and y: Double) {
         coordinateX = x
         coordinateY = y
-        print("updated")
-        print(coordinateX)
-        print(coordinateY)
     }
     
     func getCoordinates() -> (x: Double, y: Double) {
