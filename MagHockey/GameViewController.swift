@@ -53,6 +53,8 @@ class GameViewController: UIViewController {
             magnetZ = magnetometerData.magneticField.z
         }
         
+        
+        
         let sessionConfig = URLSessionConfiguration.default
         
         /* Create session, and optionally set a NSURLSessionDelegate. */
@@ -69,7 +71,7 @@ class GameViewController: UIViewController {
         
         let bodyObject = [
             "dsid": dsid,
-            "features": [magnetX, magnetY, magnetZ]
+            "features": [magnetX - model.caliMagnetX, magnetY - model.caliMagnetY, magnetZ - model.caliMagnetZ]
             ] as [String : Any]
         
         request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])

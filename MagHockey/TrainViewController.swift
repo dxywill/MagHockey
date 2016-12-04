@@ -28,6 +28,12 @@ class TrainViewController: UIViewController {
     var magXLabels = [Double]()
     var magYLabels = [Double]()
     
+    var origMagnetX = 0.000
+    var origMagnetY = 0.000
+    var origMagnetZ = 0.000
+    
+    
+    
     
     
     @IBOutlet weak var xValue: UILabel!
@@ -47,6 +53,8 @@ class TrainViewController: UIViewController {
     @IBAction func dataSwitch(_ sender: UISwitch) {
 
     }
+    
+    @IBOutlet weak var caliSwitch: UISwitch!
     
     @IBAction func sendData(_ sender: UIButton) {
         sendFeatures()
@@ -74,12 +82,21 @@ class TrainViewController: UIViewController {
     
     func getData() {
         if let magnetometerData = motionManager.magnetometerData {
-            print(String(magnetometerData.magneticField.x) + " " + String(magnetometerData.magneticField.y) + " " + String(magnetometerData.magneticField.z))
+            //print(String(magnetometerData.magneticField.x) + " " + String(magnetometerData.magneticField.y) + " " + String(magnetometerData.magneticField.z))
             
-            let feature = [magnetometerData.magneticField.x, magnetometerData.magneticField.y, magnetometerData.magneticField.z]
+           
             magnetX = magnetometerData.magneticField.x
             magnetY = magnetometerData.magneticField.y
             magnetZ = magnetometerData.magneticField.z
+            
+            if caliSwitch.isOn {
+                origMagnetX = magnetometerData.magneticField.x
+                origMagnetY = magnetometerData.magneticField.y
+                origMagnetZ = magnetometerData.magneticField.z
+                model.updateOrig(with: origMagnetX, and: origMagnetY, and: origMagnetZ)
+            }
+            
+             let feature = [magnetometerData.magneticField.x - origMagnetX , magnetometerData.magneticField.y - origMagnetY, magnetometerData.magneticField.z - origMagnetZ]
             
             //Fill features
             if magArray.count >= bufferLength {
@@ -169,7 +186,7 @@ class TrainViewController: UIViewController {
         
         let bodyObject = [
             "dsid": dsid,
-            "features": [magnetX, magnetY, magnetZ]
+            "features": [magnetX - origMagnetX, magnetY - origMagnetY, magnetZ - origMagnetZ]
             ] as [String : Any]
         
         request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])

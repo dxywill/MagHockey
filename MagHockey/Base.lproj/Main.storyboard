@@ -140,6 +140,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="caliSwitch" destination="ioA-c1-jIh" id="Oj8-BU-Mxg"/>
                         <outlet property="stepXOutlet" destination="WTf-k7-D3K" id="G1l-et-xck"/>
                         <outlet property="stepYOutlet" destination="3Eq-Fh-5kg" id="ogV-zf-vqA"/>
                         <outlet property="xValue" destination="8Wj-Ci-yzv" id="lx4-qL-eMY"/>
