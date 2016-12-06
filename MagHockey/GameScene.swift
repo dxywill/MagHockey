@@ -31,9 +31,11 @@ class GameScene: SKScene {
     
     func updateLocation() {
         
+        let playHeight = size.height * 0.7
+        let playWidth  = size.width * 0.7
         let location = model.getCoordinates()
-        coordinateX = location.x * ( Double(size.width / 8.0)) + 30.0
-        coordinateY = location.y * (Double(size.height / 10.0)) + 30.0
+        coordinateX = location.x * ( Double(playWidth / 4.0)) + 50.0
+        coordinateY = location.y * (Double(playHeight / 3.0)) + 50.0
         
         // Create the actions
         let actionMove = SKAction.move(to: CGPoint(x: coordinateX, y: coordinateY), duration:0.2)

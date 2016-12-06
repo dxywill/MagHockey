@@ -76,45 +76,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="WTf-k7-D3K">
-                                <frame key="frameInset" minX="126" minY="158" width="94" height="29"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-100" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="WTf-k7-D3K">
+                                <frame key="frameInset" minX="122" minY="110" width="94" height="29"/>
                                 <connections>
                                     <action selector="xStepper:" destination="z9R-82-IDA" eventType="valueChanged" id="eLc-mw-Hj4"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="3Eq-Fh-5kg">
-                                <frame key="frameInset" minX="123" minY="319" width="94" height="29"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-100" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="3Eq-Fh-5kg">
+                                <frame key="frameInset" minX="122" minY="184" width="94" height="29"/>
                                 <connections>
                                     <action selector="yStepper:" destination="z9R-82-IDA" eventType="valueChanged" id="7TE-A2-xBl"/>
                                 </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovx-XT-KF9">
-                                <frame key="frameInset" minX="152" minY="529" width="46" height="30"/>
+                                <frame key="frameInset" minX="145" minY="268" width="46" height="30"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
                                     <action selector="sendData:" destination="z9R-82-IDA" eventType="touchUpInside" id="77O-sk-ce3"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioA-c1-jIh">
-                                <frame key="frameInset" minX="145" minY="444" width="51" height="31"/>
+                                <frame key="frameInset" minX="142" minY="229" width="51" height="31"/>
                                 <connections>
                                     <action selector="dataSwitch:" destination="z9R-82-IDA" eventType="valueChanged" id="x6n-zq-E7Y"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wj-Ci-yzv">
-                                <frame key="frameInset" minX="142" minY="91" width="57" height="30"/>
+                                <frame key="frameInset" minX="145" minY="72" width="57" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzU-52-wWb">
-                                <frame key="frameInset" minX="132" minY="234" width="75" height="49"/>
+                                <frame key="frameInset" minX="138" minY="147" width="75" height="49"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJP-9n-0Jj">
-                                <frame key="frameInset" minX="126" minY="567" width="81" height="30"/>
+                                <frame key="frameInset" minX="133" minY="293" width="81" height="30"/>
                                 <state key="normal" title="Predict"/>
                                 <connections>
                                     <action selector="getPredict:" destination="z9R-82-IDA" eventType="touchUpInside" id="tY0-Mo-OZ3"/>
@@ -123,16 +123,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3Eq-Fh-5kg" firstAttribute="top" secondItem="rzU-52-wWb" secondAttribute="bottom" constant="36" id="79I-ct-TfY"/>
-                            <constraint firstItem="Ovx-XT-KF9" firstAttribute="top" secondItem="ioA-c1-jIh" secondAttribute="bottom" constant="54" id="DP6-dF-9ef"/>
+                            <constraint firstItem="3Eq-Fh-5kg" firstAttribute="top" secondItem="rzU-52-wWb" secondAttribute="bottom" constant="6" id="79I-ct-TfY"/>
+                            <constraint firstItem="Ovx-XT-KF9" firstAttribute="top" secondItem="ioA-c1-jIh" secondAttribute="bottom" constant="4" id="DP6-dF-9ef"/>
                             <constraint firstItem="3Eq-Fh-5kg" firstAttribute="centerX" secondItem="PZF-vv-n7W" secondAttribute="centerX" id="KCA-x9-qYY"/>
-                            <constraint firstItem="rzU-52-wWb" firstAttribute="top" secondItem="WTf-k7-D3K" secondAttribute="bottom" constant="47" id="TPf-j5-Adl"/>
-                            <constraint firstItem="8Wj-Ci-yzv" firstAttribute="top" secondItem="P55-uB-NAU" secondAttribute="bottom" constant="27" id="W1D-BF-ymX"/>
+                            <constraint firstItem="rzU-52-wWb" firstAttribute="top" secondItem="WTf-k7-D3K" secondAttribute="bottom" constant="7" id="TPf-j5-Adl"/>
+                            <constraint firstItem="8Wj-Ci-yzv" firstAttribute="top" secondItem="P55-uB-NAU" secondAttribute="bottom" constant="7" id="W1D-BF-ymX"/>
                             <constraint firstItem="VJP-9n-0Jj" firstAttribute="centerX" secondItem="PZF-vv-n7W" secondAttribute="centerX" id="Ywl-cf-qMJ"/>
-                            <constraint firstItem="ioA-c1-jIh" firstAttribute="top" secondItem="3Eq-Fh-5kg" secondAttribute="bottom" constant="96" id="Zw8-yG-hGI"/>
+                            <constraint firstItem="ioA-c1-jIh" firstAttribute="top" secondItem="3Eq-Fh-5kg" secondAttribute="bottom" constant="6" id="Zw8-yG-hGI"/>
                             <constraint firstItem="ioA-c1-jIh" firstAttribute="centerX" secondItem="PZF-vv-n7W" secondAttribute="centerX" id="bg6-21-svc"/>
                             <constraint firstItem="VJP-9n-0Jj" firstAttribute="top" secondItem="Ovx-XT-KF9" secondAttribute="bottom" constant="10" id="e9A-qm-3Zr"/>
-                            <constraint firstItem="WTf-k7-D3K" firstAttribute="top" secondItem="8Wj-Ci-yzv" secondAttribute="bottom" constant="37" id="iDX-vC-Pvy"/>
+                            <constraint firstItem="WTf-k7-D3K" firstAttribute="top" secondItem="8Wj-Ci-yzv" secondAttribute="bottom" constant="7" id="iDX-vC-Pvy"/>
                             <constraint firstItem="8Wj-Ci-yzv" firstAttribute="centerX" secondItem="PZF-vv-n7W" secondAttribute="centerX" id="iDl-cm-hnp"/>
                             <constraint firstItem="WTf-k7-D3K" firstAttribute="centerX" secondItem="PZF-vv-n7W" secondAttribute="centerX" id="qGb-ae-Hj9"/>
                             <constraint firstItem="rzU-52-wWb" firstAttribute="centerX" secondItem="PZF-vv-n7W" secondAttribute="centerX" id="td4-NY-EaN"/>

@@ -13,6 +13,7 @@ import CoreMotion
 class GameViewController: UIViewController {
     
     let model = SharedData.sharedInstance
+    let host = "http://192.168.0.6:8000"
     
     var locationTimer: Timer!
     var magnetX = 0.000
@@ -35,7 +36,7 @@ class GameViewController: UIViewController {
         
         motionManager.startMagnetometerUpdates()
         
-        locationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.getLocation), userInfo: nil, repeats: true)
+        locationTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(GameViewController.getLocation), userInfo: nil, repeats: true)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -46,7 +47,7 @@ class GameViewController: UIViewController {
     func getLocation() {
         
         if let magnetometerData = motionManager.magnetometerData {
-            print(String(magnetometerData.magneticField.x) + " " + String(magnetometerData.magneticField.y) + " " + String(magnetometerData.magneticField.z))
+            //print(String(magnetometerData.magneticField.x) + " " + String(magnetometerData.magneticField.y) + " " + String(magnetometerData.magneticField.z))
             
             magnetX = magnetometerData.magneticField.x
             magnetY = magnetometerData.magneticField.y
@@ -61,7 +62,7 @@ class GameViewController: UIViewController {
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         
         
-        guard let URL = URL(string: "http://192.168.0.6:8000/PredictOne") else {return}
+        guard let URL = URL(string: host + "/PredictOne") else {return}
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
         

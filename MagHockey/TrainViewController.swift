@@ -13,6 +13,7 @@ import CoreMotion
 class TrainViewController: UIViewController {
     
     let dsid = 99
+    let host = "http://192.168.0.6:8000"
     let model = SharedData.sharedInstance
     var magnetX = 0.000
     var magnetY = 0.000
@@ -82,7 +83,7 @@ class TrainViewController: UIViewController {
     
     func getData() {
         if let magnetometerData = motionManager.magnetometerData {
-            //print(String(magnetometerData.magneticField.x) + " " + String(magnetometerData.magneticField.y) + " " + String(magnetometerData.magneticField.z))
+            print(String(magnetometerData.magneticField.x) + " " + String(magnetometerData.magneticField.y) + " " + String(magnetometerData.magneticField.z))
             
            
             magnetX = magnetometerData.magneticField.x
@@ -131,7 +132,7 @@ class TrainViewController: UIViewController {
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         
         
-        guard let URL = URL(string: "http://192.168.0.6:8000/AddDataPoint") else {return}
+        guard let URL = URL(string: host + "/AddDataPoint") else {return}
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
         
@@ -176,7 +177,7 @@ class TrainViewController: UIViewController {
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         
         
-        guard let URL = URL(string: "http://192.168.0.6:8000/PredictOne") else {return}
+        guard let URL = URL(string: host + "/PredictOne") else {return}
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
         
