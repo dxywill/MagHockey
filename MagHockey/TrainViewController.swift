@@ -12,8 +12,8 @@ import CoreMotion
 
 class TrainViewController: UIViewController {
     
-    let dsid = 99
-    let host = "http://192.168.0.6:8000"
+    let dsid = 201
+    let host = "http://10.8.122.45:8000"
     let model = SharedData.sharedInstance
     var magnetX = 0.000
     var magnetY = 0.000
@@ -142,8 +142,7 @@ class TrainViewController: UIViewController {
         
         let bodyObject = [
             "dsid": dsid,
-            "x": magXLabels,
-            "y": magYLabels,
+            "status": magXLabels,
             "features": magArray
             ] as [String : Any]
         
@@ -205,7 +204,7 @@ class TrainViewController: UIViewController {
                 do {
                     let parsedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Double]
                     //print(parsedData)
-                    self.model.updateCoordiante(with: parsedData["x"]!, and: parsedData["y"]!)
+                    //self.model.updateCoordiante(with: parsedData["x"]!, and: parsedData["y"]!)
                 } catch let error as NSError {
                     print(error)
                 }

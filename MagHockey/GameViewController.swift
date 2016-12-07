@@ -13,13 +13,13 @@ import CoreMotion
 class GameViewController: UIViewController {
     
     let model = SharedData.sharedInstance
-    let host = "http://192.168.0.6:8000"
+    let host = "http://10.8.122.45:8000"
     
     var locationTimer: Timer!
     var magnetX = 0.000
     var magnetY = 0.000
     var magnetZ = 0.000
-    let dsid = 99
+    let dsid = 201
 
     var motionManager = CMMotionManager()
     
@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
         
         motionManager.startMagnetometerUpdates()
         
-        locationTimer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(GameViewController.getLocation), userInfo: nil, repeats: true)
+        locationTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameViewController.getLocation), userInfo: nil, repeats: true)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -89,8 +89,8 @@ class GameViewController: UIViewController {
                 
                 do {
                     let parsedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Double]
-                    //print(parsedData)
-                    self.model.updateCoordiante(with: parsedData["x"]!, and: parsedData["y"]!)
+                    print(parsedData["status"])
+                    //self.model.updateCoordiante(with: parsedData["x"]!, and: parsedData["y"]!)
                 } catch let error as NSError {
                     print(error)
                 }
