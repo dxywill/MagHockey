@@ -13,7 +13,7 @@ import CoreMotion
 class TrainViewController: UIViewController {
     
     let dsid = 201
-    let host = "http://10.8.122.45:8000"
+    let host = "http://10.8.105.134:8000"
     let model = SharedData.sharedInstance
     var magnetX = 0.000
     var magnetY = 0.000
@@ -67,9 +67,9 @@ class TrainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        motionManager.startMagnetometerUpdates()
-        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(TrainViewController.getData), userInfo: nil, repeats: true)
+        getFeatures()
+//        motionManager.startMagnetometerUpdates()
+//        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(TrainViewController.getData), userInfo: nil, repeats: true)
         //locationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(TrainViewController.getPredictOne), userInfo: nil, repeats: true)
         
         // Do any additional setup after loading the view.
@@ -161,6 +161,63 @@ class TrainViewController: UIViewController {
             else {
                 // Failure
                 print(error)
+                print("URL Session Task Failed: %@", error!.localizedDescription);
+            }
+        }
+        task.resume()
+        session.finishTasksAndInvalidate()
+    }
+    
+    func getFeatures() {
+        
+        let sessionConfig = URLSessionConfiguration.default
+        
+        /* Create session, and optionally set a NSURLSessionDelegate. */
+        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+        
+        guard let URL = URL(string: host + "/GetFeatures") else {return}
+        var request = URLRequest(url: URL)
+    
+        /* Start a new Task */
+        let task = session.dataTask(with: request) {
+            
+            (data: Data?, response: URLResponse?, error: Error?) in
+            
+            if (error == nil) {
+                // Success
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                print("URL Session Task Succeeded: HTTP \(statusCode)")
+                
+                do {
+                    let parsedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
+                    let features = parsedData["features"] as! [[Double]]
+                    let labels = parsedData["status"] as! [Double]
+                    
+                    
+                    let kNNClassifier = kNN()
+                    
+                    for f in features {
+                        kNNClassifier.addFeatures(feature: f)
+                    }
+                    for l in labels {
+                        kNNClassifier.addLabel(label: Int(l))
+                    }
+                    
+                    kNNClassifier.train()
+                    let pred = kNNClassifier.predict(x:   [
+                        872.824737548828,
+                        368.572494506836,
+                        -316.331848144531
+                        ])
+                    print("predicted")
+                    print(pred)
+                    //self.model.updateCoordiante(with: parsedData["x"]!, and: parsedData["y"]!)
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+            else {
+                // Failure
                 print("URL Session Task Failed: %@", error!.localizedDescription);
             }
         }
